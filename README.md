@@ -2,4 +2,5 @@
 ...
 ## Documentacion
 - primera prueba de js
-- integración JAvascript y html
+- Calculo de areas de un cuadrado circulo, y triangulo
+- pruebas de descuentos
