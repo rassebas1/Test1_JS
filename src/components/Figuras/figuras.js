@@ -13,3 +13,4 @@ aCuadrado = (ladoCuadrado) => {
 
 pCuadrado(ladoCuadrado);
 aCuadrado(ladoCuadrado);
+//triangulo
