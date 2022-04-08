@@ -1,2 +1,5 @@
 # Test1_JS
-primera prueba de js
+...
+## Documentacion
+- primera prueba de js
+- integración JAvascript y html
