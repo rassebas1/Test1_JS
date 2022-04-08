@@ -21,10 +21,32 @@
       body {
         font-family: "Quicksand", sans-serif;
       }
+      .discount-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
-    <h1>Descuentos</h1>
+    <div class="discount-container">
+      <h1>Descuentos</h1>
+      <form class="form-container" action="">
+        <label for="input-price">Precio</label>
+        <input id="input-price" type="number" />
+        <label for="input-discount">descuento</label>
+        <input id="input-discount" type="number" />
+        <span id="result-span"></span>
+        <button type="button" onclick="discountedPrice()">calcular</button>
+      </form>
+    </div>
   </body>
   <script src="./descuentos.js"></script>
 </html>
