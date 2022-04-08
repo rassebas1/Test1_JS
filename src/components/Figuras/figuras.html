@@ -21,11 +21,88 @@
       body {
         font-family: "Quicksand", sans-serif;
       }
+      .figures-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .square-input__container,
+      .triangle-input__container,
+      .circle-input__container {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin: 16px;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--text-input-field);
+      }
+      .square-input__container input,
+      .triangle-input__container input,
+      .circle-input__container input {
+        width: 150px;
+        height: 35px;
+        border-radius: 10px;
+        margin: 4px;
+        border: 1px solid var(--hospital-green);
+        background-color: var(--text-input-field);
+      }
+      .square-input__container button,
+      .triangle-input__container button,
+      .circle-input__container button {
+        width: 125px;
+        height: 25px;
+        transition: 0.2s;
+        color: var(--hospital-green);
+        background-color: var(--text-input-field);
+        border-radius: 8px;
+        margin: 4px;
+        border: none;
+      }
+      .square-input__container button:hover,
+      .triangle-input__container button:hover,
+      .circle-input__container button:hover {
+        color: white;
+        background-color: black;
+      }
+      .square-input__container button:active,
+      .triangle-input__container button:active,
+      .circle-input__container button:active {
+        color: white;
+        background-color: black;
+      }
     </style>
   </head>
   <body>
-    <div>
+    <div class="figures-container">
       <h1>Figuras</h1>
+      <form action="">
+        <div class="square-input__container">
+          <label for="square-input">ladoCuadrado</label>
+          <input id="square-input" type="number" />
+          <button type="button" onclick="pCuadrado()">Perimetro</button>
+          <button type="button" onclick="aCuadrado()">Area</button>
+        </div>
+        <div class="triangle-input__container">
+          <label for="triangle-side1">lado1</label>
+          <input id="triangle-side1" type="number" />
+          <label for="triangle-side2">lado2</label>
+          <input id="triangle-side2" type="number" />
+          <label for="triangle-base">base</label>
+          <input id="triangle-base" type="number" />
+          <button type="button" onclick="pTriangulo()">Perimetro</button>
+          <button type="button" onclick="aTriangulo()">Area</button>
+          <span id="error-triangle" ></span>
+        </div>
+        <div class="circle-input__container">
+          <label for="circle-radius">radio</label>
+          <input id="circle-radius" type="number" />
+          <button type="button" onclick="pCirculo()">Perimetro</button>
+          <button type="button" onclick="aCirculo()">Area</button>
+        </div>
+      </form>
     </div>
     <script src="./figuras.js"></script>
   </body>
