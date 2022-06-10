@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Salarios</title>
+  </head>
+  <style>
+    #list {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+    #list div {
+      background-color: ghostwhite;
+      border: 1px solid gray;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 4px;
+      padding: 5px;
+      border-radius: 6px;
+    }
+  </style>
+
+  <body>
+    <h1>Salarios</h1>
+    <input type="text" id="search" />
+    <div id="list"></div>
+    <script src="./Salarios.js"></script>
+    <script src="./Analisis.js"></script>
+  </body>
+</html>
