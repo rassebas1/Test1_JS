@@ -3,6 +3,7 @@ function fib(n) {
   if (n <= 1) return n;
   return fib(n - 1) + fib(n - 2);
 }
+console.time("all");
 console.group("fibonacci");
 console.log(fib(6));
 console.log(fib(7));
@@ -132,6 +133,7 @@ const canConstruct = (target, arr, memo = {}) => {
 console.log(
   canConstruct("catgod", ["at", "bat", "cat", "dog", "god", "hat", "cat"])
 );
+console.timeEnd("all");
 console.log(
   canConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", [
     "e",
