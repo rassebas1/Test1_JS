@@ -1,3 +1,4 @@
+import saludar from "./Modules/firstModule.mjs";
 var table = [
   {
     name: "console",
@@ -16,7 +17,8 @@ var table = [
 // console.info("try info");
 // console.debug("try debug");
 // console.groupEnd();
-process.on("uncaughtException", (error) => {
-  console.log(error.message);
-});
-funcion()
+
+// process.on("uncaughtException", (error) => {
+//   console.log(error.message);
+// });
+saludar.saludar();
