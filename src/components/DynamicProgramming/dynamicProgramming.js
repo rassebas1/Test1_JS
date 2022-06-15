@@ -59,7 +59,7 @@ const canSum = (target, arr, memo = {}) => {
   if (target <= 0) return true;
   if (arr.length < 0) return false;
 
-  for (let num in arr) {
+  for (let num of arr) {
     const remainder = target - num;
     if (canSum(remainder, arr, memo) === true) {
       memo[target] = true;
@@ -70,10 +70,10 @@ const canSum = (target, arr, memo = {}) => {
   return false;
 };
 console.group("canSum");
-// console.log(canSum(7, [2, 3]));
-// console.log(canSum(7, [ 5, 3,4,7]));
-// console.log(canSum(7, [2, 4]));
-// console.log(canSum(10, [2, 4]));
+console.log(canSum(7, [2, 3]));
+console.log(canSum(7, [5, 3, 4, 7]));
+console.log(canSum(7, [2, 4]));
+console.log(canSum(10, [2, 4]));
 
 console.group("canSum");
 
@@ -86,14 +86,58 @@ console.group("canSum");
  * return: array of arrays
  */
 
-
 const howSum = (target, arr, memo = {}) => {
   if (target in memo) return memo[target];
   if (target <= 0) return [];
   if (arr.length < 0) return [];
 
-  for (let num in arr) {
-    
+  let combinations = [];
+
+  for (let num of arr) {
+    const remainder = target - num;
+    const remainderCombinations = howSum(remainder, arr, memo);
+    if (remainderCombinations !== null) {
+      const newCombination = [...remainderCombinations, num];
+      combinations = newCombination;
+    }
   }
-}
-console.log(howSum(7, [ 5, 3,4,7]));
+  return combinations;
+};
+console.log(howSum(7, [5, 3, 4]));
+
+/**
+ * can construct a word, from the words of an array
+ *  by concatenating the words in the array
+ *
+ * target: string
+ * arr: array of strings
+ * return: boolean
+ */
+const canConstruct = (target, arr, memo = {}) => {
+  if (target in memo) return memo[target];
+  if (target.length === 0) return true;
+  if (arr.length === 0) return false;
+  for (const word of arr) {
+    if (target.indexOf(word) === 0) {
+      const remainder = target.slice(word.length);
+      if (canConstruct(remainder, arr, memo)) {
+        memo[target] = true;
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+console.log(
+  canConstruct("catgod", ["at", "bat", "cat", "dog", "god", "hat", "cat"])
+);
+console.log(
+  canConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", [
+    "e",
+    "eee",
+    "eeee",
+    "eeeee",
+    "eeeeeee",
+  ])
+); //false
